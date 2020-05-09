@@ -1,9 +1,14 @@
 <template>
-  <footer class="container-fluid fixed-bottom mb-5">
-      <p>Coded with <span class="pink">love</span> & VueJS by <a class="pink text-bold" href="https://lidiapeleja.com">Lídia Pelejà</a></p>
-      <p>
-        All rights reserved · <span>{{ new Date().getFullYear() }}</span>
-      </p>
+  <footer class="container-fluid fixed-bottom pt-4 pb-5">
+    <p>
+      Coded with <span class="pink">love</span> & VueJS by
+      <a class="pink text-bold" href="https://lidiapeleja.com">Lídia Pelejà</a> ·
+      <span>{{ new Date().getFullYear() }}</span>
+    </p>
+    <p>
+      Credits: JS Function thanks to
+      <a class="pink" href="https://gist.github.com/jedfoster/7939513">J. Foster</a>
+    </p>
   </footer>
 </template>
 
@@ -18,6 +23,7 @@ footer {
   font-family: 'Crismon Text', serif;
   text-align: center;
   font-style: italic;
+  background-color: $white;
   .pink {
     color: $primary;
   }
