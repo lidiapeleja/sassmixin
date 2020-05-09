@@ -6,39 +6,39 @@
       >
         <div>
           <p
-            v-if="!submitFormisInvalid"
+            v-if="form.submitFormisInvalid"
             class="mb-4 text-danger warning-message"
           >
             <span>⚠️</span> Submit the color in HEX value. Example: #ffffff
           </p>
           <div>
             <h1>
-              mix(
-              <b-input
+              mix(#<b-input
                 v-model="form.color1"
                 class="h4 mb-2 mr-sm-2 mb-sm-0"
-                placeholder="#cc5490"
+                placeholder="cc5490"
               ></b-input>
-              ,
-              <span>
+              , #<span>
                 <b-input
                   v-model="form.color2"
                   class="h4 mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="#fff"
+                  placeholder="ffffff"
                 ></b-input></span
-              >,
-              <span>
+              >, <span>
                 <b-input
                   v-model="form.weight"
                   class="h4 mb-2 mr-sm-2 mb-sm-0"
-                  placeholder="50%"
+                  placeholder="50"
                 ></b-input></span
-              >)
+              >%)
             </h1>
-            {{ form.color1 }}
-            <b-button @click="submitForm" class="section" variant="primary"
+            <b-button
+              @click.prevent="submitForm"
+              class="section"
+              variant="primary"
               >Find color</b-button
             >
+            <p v-if="form.bgColor !== null" class="section">Your color is: {{ this.form.bgColor }}</p>
           </div>
         </div>
       </div>
@@ -62,16 +62,47 @@ export default {
     };
   },
   methods: {
+    changeColor(color1, color2, weight) {
+      function d2h(d) {
+        return d.toString(16);
+      } // convert a decimal value to hex
+      function h2d(h) {
+        return parseInt(h, 16);
+      } // convert a hex value to decimal
+
+      weight = typeof weight !== 'undefined' ? weight : 50; // set the weight to 50%, if that argument is omitted
+
+      var color = '#';
+
+      for (var i = 0; i <= 5; i += 2) {
+        // loop through each of the 3 hex pairs—red, green, and blue
+        var v1 = h2d(color1.substr(i, 2));
+        var v2 = h2d(color2.substr(i, 2));
+        var val = d2h(Math.floor(v2 + (v1 - v2) * (weight / 100.0)));
+        while (val.length < 2) {
+          val = '0' + val;
+        } // prepend a '0' if val results in a single digit
+
+        color += val; // concatenate val to our new color string
+      }
+
+      return color; // PROFIT!
+    },
     submitForm() {
-      const submitFormisInvalid =
+      this.form.submitFormisInvalid =
         this.form.color1 === '' ||
         this.form.color2 === '' ||
         this.form.weight === '';
 
-      if (submitFormisInvalid) {
-        alert('errrrror');
+      if (this.form.submitFormisInvalid) {
       } else {
-        alert('working');
+        const result = this.changeColor(
+          this.form.color1,
+          this.form.color2,
+          this.form.weight
+        );
+        this.form.bgColor = result;
+        console.log(this.form.bgColor);
       }
     },
   },
