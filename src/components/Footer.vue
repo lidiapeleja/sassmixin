@@ -1,5 +1,5 @@
 <template>
-  <footer class="container-fluid fixed-bottom pt-4 pb-5">
+  <footer class="container-fluid pt-4 pb-5">
     <p>
       Coded with <span class="pink">love</span> & VueJS by
       <a class="pink text-bold" href="https://lidiapeleja.com">Lídia Pelejà</a> ·

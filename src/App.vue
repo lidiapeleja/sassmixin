@@ -11,8 +11,8 @@
       <div class="paragraph row d-flex justify-content-center text-center">
         <div class="col-md-8">
           <p>
-            This is an easy tool to help Designers and Web Developers to understand how SASS color
-            mix() function works. Introduce the values in the following form and get the HEX color result right away!
+            This is an easy tool to help Designers and Web Developers to understand better how SASS color
+            mix() function works. Introduce the values in the following form and get the HEX value right away!
           </p>
         </div>
       </div>

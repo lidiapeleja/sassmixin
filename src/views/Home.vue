@@ -1,5 +1,5 @@
 <template>
-  <div class="home h-100 container-fluid">
+  <div class="home container-fluid">
     <vue-headful
       title="Mix() SASS Color Finder"
       description="Mix() SASS Color Finder by Lídia Pelejà"

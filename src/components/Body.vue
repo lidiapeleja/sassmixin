@@ -5,15 +5,19 @@
         class="section col d-flex align-items-center justify-content-center text-center"
       >
         <div>
+          <!-- Error Message -->
           <p
             v-if="!form.submitFormisValid"
             class="mb-4 text-danger warning-message"
           >
             <span>⚠️</span> THE VALUES ARE NOT VALID: <br />
-            Submit the 1st and 2nd parameter in 6 digit HEX value: #ffffff is
+            Submit the 1st and 2nd parameters with a 6 digit HEX value: #ffffff is
             OK, <span class="line-through">#fff</span> is not. <br />
             The 3rd parameter must be a number.
           </p>
+          <!-- Error Message -->
+
+          <!-- Form -->
           <div>
             <h1>
               mix(#<b-input
@@ -36,16 +40,28 @@
                 ></b-input></span
               >%)
             </h1>
+            <!-- Button -->
             <b-button
               @click.prevent="submitForm"
               class="section"
               variant="primary"
               >Find color</b-button
             >
-            <p v-if="form.bgColor !== null" class="section">
+            <!-- /Button -->
+            <!-- Render of Value and Color Palette -->
+            <div
+              v-if="form.bgColor !== null"
+              class="my-5 section d-flex justify-content-center align-items-center"
+            >
               Your color is: {{ this.form.bgColor }}
-            </p>
+              <div
+                class="ml-3 box-color"
+                v-bind:style="{ background: this.form.bgColor }"
+              ></div>
+              <!-- /Render of Value and Color Palette -->
+            </div>
           </div>
+          <!-- /Form -->
         </div>
       </div>
     </div>
@@ -110,7 +126,6 @@ export default {
           this.form.weight
         );
         this.form.bgColor = result;
-      } else {
       }
     },
   },
@@ -151,8 +166,14 @@ export default {
   .line-through {
     text-decoration: line-through;
   }
-  .warning-message{
+  .warning-message {
     font-size: $font-size-sm;
+  }
+  .box-color {
+    background: red;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
   }
 }
 </style>
