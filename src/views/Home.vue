@@ -1,15 +1,14 @@
 <template>
   <div class="home section container-fluid">
     <vue-headful
-      title="Learn, test and memorise the list of irregular german verbs in a fun way!"
-      description="Bring your german to a next level with UnregelApp. Learn, test and memorise the list of irregular german verbs for free. Start learning now!"
-      keywords="List, Irregular verbs, German, learn, list, test, memorise, improve, Germany, German, Deutschland, App"
+      title="bla bla bla"
+      description="bla bla bla"
+      keywords="bla bla bla"
       image=""
       lang=""
       ogLocale=""
-      url="https://unregelapp.com/"
+      url="https://mixsass.lidiapeleja.com/"
     />
-    <Sticky />
     <Header />
     <Body />
     <Footer />

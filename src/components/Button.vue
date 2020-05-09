@@ -1,10 +1,10 @@
 <template>
   <div>
     <b-button
-      class="btn section"
+      class="btn"
       variant="secondary"
       href="https://play.unregelapp.com"
-      >Get started now <span class="pl-2">&#10095;</span>
+      >this is a button <span class="pl-2">&#10095;</span>
     </b-button>
   </div>
 </template>

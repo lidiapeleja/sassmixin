@@ -1,7 +1,7 @@
 <template>
   <footer class="section container">
    <div>
-     hola
+     this is the footer
    </div>
   </footer>
 </template>
@@ -14,7 +14,6 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  height: 7rem;
-  text-align: center;
+  background: red;
 }
 </style>

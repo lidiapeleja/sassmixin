@@ -1,4 +1,4 @@
-<template class="header bg-dark article">
+<template class="header article">
   <div class="row">
     <div class="col-md-6">
       <div class="">

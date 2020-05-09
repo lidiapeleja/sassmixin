@@ -3,19 +3,7 @@
     <div id="nav">
       <div class="row">
         <div class="col-6 text-left pl-0 mb-0">
-          <router-link class="logo" to="/">UnregelApp</router-link>
-        </div>
-        <div class="col-6">
-          <div class="row h-100 d-flex justify-content-end align-items-center">
-            <div>
-              <router-link class="mr-3 about-link" to="/about"
-                >About</router-link
-              >
-            </div>
-            <div>
-              <router-link to="/blog">Blog</router-link>
-            </div>
-          </div>
+          <router-link class="logo" to="/">Mix() Sass Converter</router-link>
         </div>
       </div>
     </div>
@@ -47,32 +35,5 @@
 #nav {
   padding: 30px 25px 15px;
 
-  a {
-    font-weight: bold;
-    color: $grey;
-    &:hover {
-      text-decoration: none;
-    }
-
-    &.router-link-exact-active {
-      color: $secondary;
-      border-bottom: solid 3px $secondary;
-      transition: border 0.2s;
-    }
-  }
-  .about-link {
-    &::after {
-      color: $grey;
-      content: '|';
-      position: relative;
-      right: -8px;
-    }
-  }
-  .logo {
-    font-size: $h4-font-size;
-    @include media-breakpoint-up(md) {
-      font-size: $h3-font-size;
-    }
-  }
 }
 </style>
