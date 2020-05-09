@@ -1,10 +1,7 @@
 <template>
   <div>
-    <b-button
-      class="btn"
-      variant="secondary"
-      href="https://play.unregelapp.com"
-      >find out the color<span class="pl-2">&#10095;</span>
+    <b-button class="btn-outline-secondary" variant="secondary"
+      >find out the color
     </b-button>
   </div>
 </template>

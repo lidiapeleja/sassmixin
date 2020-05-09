@@ -17,16 +17,15 @@
   color: $black;
   height: calc(100vh - 90px);
   .btn {
-    background-color: $secondary;
-    border: $secondary;
-    box-shadow: rgba($secondary, 0.5) 0px 6px 40px -10px;
+    border: transparent;
+    background-color: $primary;
     text-transform: uppercase;
-    font-size: $font-size-base;
+    font-size: $h5-font-size;
+    padding: 1rem 2rem;
     color: $white;
     border-radius: 0.3rem;
     &:hover {
       background-color: $secondary;
-      background-color: darken($secondary, 15%);
     }
   }
 }
