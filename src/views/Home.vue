@@ -1,9 +1,9 @@
 <template>
   <div class="home h-100 container-fluid">
     <vue-headful
-      title="bla bla bla"
-      description="bla bla bla"
-      keywords="bla bla bla"
+      title="Mix() SASS Color Finder"
+      description="Mix() SASS Color Finder by Lídia Pelejà"
+      keywords="Mix() SASS Function Color Picker"
       image=""
       lang=""
       ogLocale=""
@@ -29,7 +29,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  height: 100vh;
-}
 </style>

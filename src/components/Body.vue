@@ -11,7 +11,7 @@
               <b-input
                 v-bind:value="color1"
                 id="color1"
-                class="h2 mb-2 mr-sm-2 mb-sm-0"
+                class="h4 mb-2 mr-sm-2 mb-sm-0"
                 placeholder="$color-1"
               ></b-input
               >,
@@ -19,7 +19,7 @@
                 <b-input
                   v-bind:value="color2"
                   id="color2"
-                  class="h2 mb-2 mr-sm-2 mb-sm-0"
+                  class="h4 mb-2 mr-sm-2 mb-sm-0"
                   placeholder="$color-2"
                 ></b-input></span
               >,
@@ -27,7 +27,7 @@
                 <b-input
                   v-bind:value="weight"
                   id="weight"
-                  class="h2 mb-2 mr-sm-2 mb-sm-0"
+                  class="h4 mb-2 mr-sm-2 mb-sm-0"
                   placeholder="$weight"
                 ></b-input></span
               >)
@@ -60,8 +60,25 @@ export default {
 <style lang="scss" scoped>
 .body {
   height: 100%;
-  .form-control{
+  .form-control {
     width: 12rem;
+    height: 3rem;
+    position: relative;
+    bottom: .4rem;
+    border: $light-grey solid 1px;
+    border-radius: 3px;
+    padding: .5rem;
+    &:focus {
+      border: $primary solid 1px;
+      transition: border .4s;
+    }
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
   }
 }
 </style>
