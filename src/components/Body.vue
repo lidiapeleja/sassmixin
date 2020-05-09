@@ -32,7 +32,7 @@
                 ></b-input></span
               >)
             </h1>
-            <b-button class="section" variant="primary"
+            <b-button v-on:click="submitForm" class="section" variant="primary"
               >Find the color</b-button
             >
           </div>
@@ -45,6 +45,11 @@
 <script>
 export default {
   name: 'Body',
+  methods: {
+    submitForm() {
+      console.log('is here anything working?');
+    },
+  },
   components: {},
   data() {
     return {
@@ -64,13 +69,14 @@ export default {
     width: 12rem;
     height: 3rem;
     position: relative;
-    bottom: .4rem;
+    bottom: 0.4rem;
     border: $light-grey solid 1px;
     border-radius: 3px;
-    padding: .5rem;
+    padding: 0.5rem;
+    font-weight: 300;
     &:focus {
       border: $primary solid 1px;
-      transition: border .4s;
+      transition: border 0.4s;
     }
   }
 

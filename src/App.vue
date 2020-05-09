@@ -22,12 +22,12 @@
     border: transparent;
     background-color: $primary;
     text-transform: uppercase;
-    font-size: $h5-font-size;
     padding: 1rem 2rem;
     color: $white;
     border-radius: 0.3rem;
+    box-shadow: 0 6px 40px -10px rgba(255,2,102,.5);
     &:hover {
-      background-color: $secondary;
+      background-color: darken($primary, 15%);
     }
   }
 }
@@ -53,7 +53,7 @@ mark {
 
     color: $primary;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: $h2-font-size;
     letter-spacing: 10px;
     text-transform: uppercase;
     &:hover {
