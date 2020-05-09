@@ -15,7 +15,7 @@
 #app {
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
   color: $black;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 220px);
   .btn {
     border: transparent;
     background-color: $primary;
@@ -32,5 +32,8 @@
 
 #nav {
   padding: 30px 25px 15px;
+   a {
+     color: $primary;
+   }
 }
 </style>

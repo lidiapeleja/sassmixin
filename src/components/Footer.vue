@@ -1,11 +1,9 @@
 <template>
-  <footer class="container-fluid">
-    <div class="section mb-5">
+  <footer class="container-fluid fixed-bottom mb-5">
       <p>Coded with <span class="pink">love</span> & VueJS by <a class="pink text-bold" href="https://lidiapeleja.com">Lídia Pelejà</a></p>
       <p>
         All rights reserved · <span>{{ new Date().getFullYear() }}</span>
       </p>
-    </div>
   </footer>
 </template>
 
@@ -22,6 +20,9 @@ footer {
   font-style: italic;
   .pink {
     color: $primary;
+  }
+  p {
+    margin: 0;
   }
 }
 </style>
