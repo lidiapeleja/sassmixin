@@ -11,12 +11,4 @@ export default {
 h3 {
   font-weight: $font-weight-bold;
 }
-svg {
-  height: 150px;
-  width: 150px;
-  @include media-breakpoint-up(md) {
-    height: 200px;
-    width: 200px;
-  }
-}
 </style>
