@@ -1,27 +1,26 @@
-<template class="header article">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="">
-        <Button />
-      </div>
+<template>
+<div class="h-100 header container-fluid">
+  <div class="h-100 row">
+ <div class="h-100 col-md-6">
+      HOLAAAAA
     </div>
   </div>
+</div>
 </template>
 
 <script>
-import Button from '@/components/Button.vue';
 
 export default {
   name: 'Header',
   components: {
-    Button,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .header {
-  height: calc(100vh - 78px);
+background-color: lightblue;
+height: 100%;
 }
 
 </style>
