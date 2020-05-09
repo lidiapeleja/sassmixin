@@ -6,10 +6,12 @@
       >
         <div>
           <p
-            v-if="form.submitFormisInvalid"
+            v-if="!form.submitFormisValid"
             class="mb-4 text-danger warning-message"
           >
-            <span>⚠️</span> Submit the color in HEX value. Example: #ffffff
+            <span>⚠️</span> Submit the 1st and 2nd paramwter in 6 digit HEX
+            value. #ffffff is OK.
+            <span class="line-through">#fff</span> is not. The 3rd parameter must be a number.
           </p>
           <div>
             <h1>
@@ -24,9 +26,10 @@
                   class="h4 mb-2 mr-sm-2 mb-sm-0"
                   placeholder="ffffff"
                 ></b-input></span
-              >, <span>
+              >,
+              <span>
                 <b-input
-                  v-model="form.weight"
+                  v-model.number="form.weight"
                   class="h4 mb-2 mr-sm-2 mb-sm-0"
                   placeholder="50"
                 ></b-input></span
@@ -38,7 +41,9 @@
               variant="primary"
               >Find color</b-button
             >
-            <p v-if="form.bgColor !== null" class="section">Your color is: {{ this.form.bgColor }}</p>
+            <p v-if="form.bgColor !== null" class="section">
+              Your color is: {{ this.form.bgColor }}
+            </p>
           </div>
         </div>
       </div>
@@ -53,7 +58,7 @@ export default {
   data() {
     return {
       form: {
-        submitFormisInvalid: false,
+        submitFormisValid: true,
         color1: '',
         color2: '',
         weight: '',
@@ -89,13 +94,16 @@ export default {
       return color; // PROFIT!
     },
     submitForm() {
-      this.form.submitFormisInvalid =
-        this.form.color1 === '' ||
-        this.form.color2 === '' ||
-        this.form.weight === '';
+      this.form.submitFormisValid =
+        this.form.color1 !== '' &&
+        this.form.color1.length === 6 &&
+        this.form.color2 !== '' &&
+        this.form.color2.length === 6 &&
+        this.form.weight !== '' &&
+        isNaN(this.form.weight) === false;
 
-      if (this.form.submitFormisInvalid) {
-      } else {
+      if (this.form.submitFormisValid) {
+        console.log('isNaN?', isNaN(this.form.weight));
         const result = this.changeColor(
           this.form.color1,
           this.form.color2,
@@ -103,6 +111,8 @@ export default {
         );
         this.form.bgColor = result;
         console.log(this.form.bgColor);
+      } else {
+        alert('error');
       }
     },
   },
@@ -132,6 +142,10 @@ export default {
   textarea:focus,
   button:focus {
     outline: none;
+  }
+
+  .line-through {
+    text-decoration: line-through;
   }
 }
 </style>
