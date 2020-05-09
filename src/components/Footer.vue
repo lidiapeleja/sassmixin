@@ -1,19 +1,23 @@
 <template>
-  <footer class="container-fluid">
+  <footer class="p-section container-fluid">
    <div>
-     this is the footer
+     <p>Coded with love & VueJS by Lídia Pelejà</p>
+     <p>All rights reserved · <span>{{ new Date().getFullYear() }}</span>
+</p>
    </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
 }
 </script>
 
 <style lang="scss" scoped>
 footer {
-  background: red;
+  font-family: 'Crismon Text', serif;
+  text-align: center;
+  font-style: italic;
 }
 </style>
