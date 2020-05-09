@@ -4,7 +4,7 @@
       class="btn"
       variant="secondary"
       href="https://play.unregelapp.com"
-      >this is a button <span class="pl-2">&#10095;</span>
+      >find out the color<span class="pl-2">&#10095;</span>
     </b-button>
   </div>
 </template>

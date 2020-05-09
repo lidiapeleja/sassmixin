@@ -13,7 +13,7 @@
 
 <style lang="scss">
 #app {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   color: $grey;
 
   .btn {
