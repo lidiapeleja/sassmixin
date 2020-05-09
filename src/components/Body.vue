@@ -1,8 +1,8 @@
 <template>
-<div class="h-100 header container-fluid">
+<div class="h-100 body container-fluid">
   <div class="h-100 row">
  <div class="h-100 col-md-6">
-      HOLAAAAA
+      this is the body
     </div>
   </div>
 </div>
@@ -11,14 +11,14 @@
 <script>
 
 export default {
-  name: 'Header',
+  name: 'Body',
   components: {
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.header {
+.body {
 background-color: lightblue;
 height: 100%;
 }
