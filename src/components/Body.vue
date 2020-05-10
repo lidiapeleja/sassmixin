@@ -135,12 +135,12 @@ export default {
 <style lang="scss" scoped>
 .body {
   height: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   @include media-breakpoint-up(md) {
     min-height: 60vh;
   }
     @include media-breakpoint-up(lg) {
-    min-height: 30vh;
+    min-height: 80vh;
   }
   .form-control {
     width: 12rem;
