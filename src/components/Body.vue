@@ -5,15 +5,15 @@
         class="section col d-flex align-items-center justify-content-center text-center"
       >
         <div>
-          <!-- Error Message -->
+          <!-- Error Message Validation -->
           <p
-            v-if="!form.submitFormisValid"
+            v-if="!form.hexValid && !form.submitFormisValid"
             class="mb-4 text-danger warning-message"
           >
             <span>⚠️</span> THE VALUES ARE NOT VALID: <br />
-            Submit the 1st and 2nd parameters with a 6 digit HEX value: #ffffff
-            is OK, <span class="line-through">#fff</span> is not. <br />
-            The 3rd parameter must be a integrer number.
+            Submit the 1st and 2nd parameters with a 6 digit HEX value like #ffffff.
+          <br />
+            The 3rd parameter must be an integrer number.
           </p>
           <!-- Error Message -->
 
@@ -22,13 +22,14 @@
             <h1>
               mix(#<b-input
                 v-model="form.color1"
-                @change="checkifisHEX"
+                @change="checkifisHEXcolor1"
                 class="value mb-2 mr-sm-2 mb-sm-0"
                 placeholder="cc5490"
               ></b-input>
               , #<span>
                 <b-input
                   v-model="form.color2"
+                  @change="checkifisHEXcolor2"
                   class="value mb-2 mr-sm-2 mb-sm-0"
                   placeholder="ffffff"
                 ></b-input></span
@@ -77,6 +78,8 @@ export default {
     return {
       form: {
         submitFormisValid: true,
+        hexValidcolor1: true,
+        hexValidcolor2: true,
         color1: '',
         color2: '',
         weight: '',
@@ -85,6 +88,7 @@ export default {
     };
   },
   methods: {
+    // Credits: Function written by J.Foster
     changeColor(color1, color2, weight) {
       function d2h(d) {
         return d.toString(16);
@@ -111,10 +115,10 @@ export default {
 
       return color; // PROFIT!
     },
+    // Credits: Function written by J.Foster
 
-    // regular function
+    // check if is a HEX value
     isHexColor(hex) {
-      console.log(hex);
       return (
         typeof hex === 'string' &&
         hex.length === 6 &&
@@ -122,11 +126,22 @@ export default {
       );
     },
 
-    checkifisHEX(hex) {
-      if (this.isHexColor) {
-        console.log('it is an HEX value');
+    // prove if color1 is a valid HEX value
+    checkifisHEXcolor1(hex) {
+      if (this.isHexColor(hex)) {
+        this.form.hexValidcolor1 = true;
       } else {
-        console.log('is NOT A HEX VALUE');
+        this.form.hexValidcolor1 = false;
+      }
+    },
+
+    // prove if color1 is a valid HEX value
+
+    checkifisHEXcolor2(hex) {
+      if (this.isHexColor(hex)) {
+        this.form.hexValidcolor2 = true;
+      } else {
+        this.form.hexValidcolor2 = false;
       }
     },
 
@@ -137,7 +152,9 @@ export default {
         this.form.color2 !== '' &&
         this.form.color2.length === 6 &&
         this.form.weight !== '' &&
-        isNaN(this.form.weight) === false;
+        isNaN(this.form.weight) === false &&
+        this.form.hexValidcolor1 === true &&
+        this.form.hexValidcolor2 === true;
 
       if (this.form.submitFormisValid) {
         const result = this.changeColor(
@@ -201,6 +218,7 @@ export default {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    box-shadow: $box-shadow;
   }
 }
 </style>
