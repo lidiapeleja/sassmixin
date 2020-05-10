@@ -2,7 +2,7 @@
   <div class="body container-fluid">
     <div class="row justify-content-center">
       <div
-        class="section col d-flex align-items-center justify-content-center text-center"
+        class="paragraph col d-flex align-items-center justify-content-center text-center"
       >
         <div>
           <!-- Error Message Validation -->
