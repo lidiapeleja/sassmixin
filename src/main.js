@@ -11,7 +11,7 @@ Vue.component('vue-headful', vueHeadful);
 Vue.config.productionTip = false;
 
 Vue.use(VueGtag, {
-  config: { id: 'UA-145817345-1' },
+  config: { id: 'UA-166084965' },
 });
 
 new Vue({
