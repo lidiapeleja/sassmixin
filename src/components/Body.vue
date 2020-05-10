@@ -11,8 +11,8 @@
             class="mb-4 text-danger warning-message"
           >
             <span>⚠️</span> THE VALUES ARE NOT VALID: <br />
-            Submit the 1st and 2nd parameters with a 6 digit HEX value: #ffffff is
-            OK, <span class="line-through">#fff</span> is not. <br />
+            Submit the 1st and 2nd parameters with a 6 digit HEX value: #ffffff
+            is OK, <span class="line-through">#fff</span> is not. <br />
             The 3rd parameter must be a number.
           </p>
           <!-- Error Message -->
@@ -135,6 +135,13 @@ export default {
 <style lang="scss" scoped>
 .body {
   height: 100%;
+  min-height: 90vh;
+  @include media-breakpoint-up(md) {
+    min-height: 60vh;
+  }
+    @include media-breakpoint-up(lg) {
+    min-height: 30vh;
+  }
   .form-control {
     width: 12rem;
     height: 3.4rem;
