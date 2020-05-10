@@ -13,7 +13,7 @@
             <span>⚠️</span> THE VALUES ARE NOT VALID: <br />
             Submit the 1st and 2nd parameters with a 6 digit HEX value: #ffffff
             is OK, <span class="line-through">#fff</span> is not. <br />
-            The 3rd parameter must be a number.
+            The 3rd parameter must be a integrer number.
           </p>
           <!-- Error Message -->
 
@@ -22,6 +22,7 @@
             <h1>
               mix(#<b-input
                 v-model="form.color1"
+                @change="checkifisHEX"
                 class="value mb-2 mr-sm-2 mb-sm-0"
                 placeholder="cc5490"
               ></b-input>
@@ -110,6 +111,25 @@ export default {
 
       return color; // PROFIT!
     },
+
+    // regular function
+    isHexColor(hex) {
+      console.log(hex);
+      return (
+        typeof hex === 'string' &&
+        hex.length === 6 &&
+        !isNaN(Number('0x' + hex))
+      );
+    },
+
+    checkifisHEX(hex) {
+      if (this.isHexColor) {
+        console.log('it is an HEX value');
+      } else {
+        console.log('is NOT A HEX VALUE');
+      }
+    },
+
     submitForm() {
       this.form.submitFormisValid =
         this.form.color1 !== '' &&
@@ -139,7 +159,7 @@ export default {
   @include media-breakpoint-up(md) {
     min-height: 60vh;
   }
-    @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(lg) {
     min-height: 80vh;
   }
   .form-control {
