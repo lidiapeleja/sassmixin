@@ -41,25 +41,33 @@
                 ></b-input></span
               >%)
             </h1>
-            <!-- Button -->
-            <b-button
-              @click.prevent="submitForm"
-              class="section"
-              variant="primary"
-              >Find color</b-button
-            >
-            <!-- /Button -->
-            <!-- Render of Value and Color Palette -->
-            <div
-              v-if="form.bgColor !== null"
-              class="my-5 section d-flex justify-content-center align-items-center"
-            >
-              Your color is: {{ this.form.bgColor }}
-              <div
-                class="ml-3 box-color"
-                v-bind:style="{ background: this.form.bgColor }"
-              ></div>
-              <!-- /Render of Value and Color Palette -->
+            <!-- Button & Color Palette -->
+            <div class="container">
+              <div class="row section">
+                <div class="col d-flex justify-content-center">
+                  <!-- Button -->
+                  <b-button
+                    @click.prevent="submitForm"
+                    class="mr-4"
+                    variant="primary"
+                    >Find color</b-button
+                  >
+                  <!-- /Button -->
+                  <!-- Render Value and Color Palette -->
+                  <div
+                    v-if="form.bgColor !== null"
+                    class="d-flex justify-content-center align-items-center"
+                  >
+                    Your color is: {{ this.form.bgColor }}
+                    <div
+                      class="ml-3 box-color"
+                      v-bind:style="{ background: this.form.bgColor }"
+                    ></div>
+                    <!-- /Render of Value and Color Palette -->
+                  </div>
+                </div>
+              </div>
+              <!-- /Button & Color Palette -->
             </div>
           </div>
           <!-- /Form -->
