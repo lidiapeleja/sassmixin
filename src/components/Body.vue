@@ -44,7 +44,7 @@
             <!-- Button & Color Palette -->
             <div class="container">
               <div class="row section">
-                <div class="col d-flex justify-content-center">
+                <div class="col d-sm-flex justify-content-center">
                   <!-- Button -->
                   <b-button
                     @click.prevent="submitForm"
