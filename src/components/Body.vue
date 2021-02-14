@@ -1,9 +1,7 @@
 <template>
-  <div class="body container-fluid">
-    <div class="row justify-content-center">
-      <div
-        class="paragraph col d-flex align-items-center justify-content-center text-center"
-      >
+  <div class="body container-xxl">
+    <div class="justify-content-center">
+      <div class="text-center">
         <div>
           <!-- Error Message Validation -->
           <p
@@ -11,8 +9,9 @@
             class="mb-4 text-danger warning-message"
           >
             <span>⚠️</span> THE VALUES ARE NOT VALID: <br />
-            Submit the 1st and 2nd parameters with a 6 digit HEX value like #ffffff.
-          <br />
+            Submit the 1st and 2nd parameters with a 6 digit HEX value like
+            #ffffff.
+            <br />
             The 3rd parameter must be an integrer number.
           </p>
           <!-- Error Message -->
@@ -174,7 +173,7 @@ export default {
   height: 100%;
   min-height: 100vh;
   @include media-breakpoint-up(md) {
-    min-height: 60vh;
+    min-height: 75vh;
   }
   @include media-breakpoint-up(lg) {
     min-height: 80vh;

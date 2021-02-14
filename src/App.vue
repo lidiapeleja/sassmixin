@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container-fluid">
+  <div id="app" class="container-xxl">
     <div id="nav">
       <div class="row">
         <div class="col text-center mt-4 pl-0 mb-0">
@@ -9,10 +9,14 @@
         </div>
       </div>
       <div class="paragraph row d-flex justify-content-center text-center">
-        <div class="col-md-8">
-          <p>
-            This is an easy tool to help Designers and Web Developers to understand better how SASS color
-            mix() function works. Introduce the values in the following form and get the HEX value right away!
+        <div class="col-md-8 col-lg-6">
+          <p class="font-weight-bold pt-4">
+            This is an easy tool to help Designers and Web Developers to
+            understand better how SASS color mix() function works.
+          </p>
+          <p class="pt-2">
+            Introduce the values in the following form and get the HEX value
+            right away!
           </p>
         </div>
       </div>

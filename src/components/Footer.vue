@@ -1,13 +1,16 @@
 <template>
-  <footer class="fixed-bottom container-fluid pt-4 pb-5">
+  <footer class="fixed-bottom container-xxl pt-4 pb-5">
     <p>
       Coded with <span class="pink">love</span> & VueJS by
-      <a class="pink text-bold" href="https://lidiapeleja.com">Lídia Pelejà</a> ·
+      <a class="pink text-bold" href="https://lidiapeleja.com">Lídia Pelejà</a>
+      ·
       <span>{{ new Date().getFullYear() }}</span>
     </p>
     <p>
       Credits: JS Function thanks to
-      <a class="pink" href="https://gist.github.com/jedfoster/7939513">J. Foster</a>
+      <a class="pink" href="https://gist.github.com/jedfoster/7939513"
+        >J. Foster</a
+      >
     </p>
   </footer>
 </template>

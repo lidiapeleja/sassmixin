@@ -1,5 +1,5 @@
 <template>
-  <div class="home container-fluid">
+  <div class="home container-xxl">
     <vue-headful
       title="Mix() SASS Color Finder"
       description="Mix() SASS Color Finder by Lídia Pelejà"
@@ -28,5 +28,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
